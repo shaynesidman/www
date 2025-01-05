@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #313338;
+  height: 4rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  color: #ffffff;
+  width: 25vw;
+  font-size: large;
+}
+
+.navbarvideo {
+  height: 65px;
+}
+
+@media (max-width: 750px) {
+  .hide-logo {
+    display: none;
+  }
+}
+
+.tabs {
+  width: 75vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #ffffff;
+}
+
+@media (max-width: 750px) {
+  .hide-tabs {
+    width: 100vw;
+    justify-content: center;
+  }
+}
