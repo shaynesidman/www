@@ -1,13 +1,24 @@
+"use client";
+
 import "./NavBarItem.css";
-import Link from "next/link"; 
 
 interface NavBarItemProps {
-  text: string
-  redirect: string
+  text: string;
+  targetId: string;
 }
 
 export default function NavBarItem(props: NavBarItemProps) {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    const targetElement = document.getElementById(props.targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Link className="navbarbutton" href={props.redirect}>{props.text}</Link>
+    <a className="navbarbutton" href={`#${props.targetId}`} onClick={handleClick}>
+      {props.text}
+    </a>
   );
 }

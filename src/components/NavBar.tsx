@@ -16,10 +16,10 @@ export default function NavBar() {
         </Link>
       </span>
       <span className="tabs hide-tabs">
-        <NavBarItem text="Coursework" redirect="/coursework" />
-        <NavBarItem text="Projects" redirect="/projects" />
-        <NavBarItem text="Experience" redirect="/experience" />
-        <NavBarItem text="About Me" redirect="/aboutme" />
+        <NavBarItem text="Coursework" targetId="coursework" />
+        <NavBarItem text="Projects" targetId="projects" />
+        <NavBarItem text="Experience" targetId="experience" />
+        <NavBarItem text="About Me" targetId="aboutme" />
       </span>
     </div>
   );
