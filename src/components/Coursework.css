@@ -1,0 +1,12 @@
+.coursework-div {
+  width: 100vw;
+  color: white;
+}
+
+.course-gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
