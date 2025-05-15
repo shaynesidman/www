@@ -3,23 +3,11 @@
 <div class="intro">
     <div class="introduction title">Hi, I'm <span class="tufts">Shayne</span>.</div>
     <div class="title">I study Computer Science at <span class="tufts">Tufts University</span>.</div>
-    <a id="check-out-link" class="checkout" href="#coursework">
+    <a id="check-out-link" class="checkout" href="#coursework" onclick="
+        event.preventDefault();
+        const el = document.getElementById('coursework');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+    ">
         Check out some of the work that I have done!
     </a>
 </div>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const link = document.getElementById("check-out-link");
-      if (link) {
-        link.addEventListener("click", (event) => {
-          event.preventDefault();
-          const target = document.getElementById("coursework");
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
-          }
-        });
-      }
-    });
-  </script>
-  

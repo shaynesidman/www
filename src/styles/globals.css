@@ -1,4 +1,12 @@
 /* Site-wide classes */
+* {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar { 
+    display: none;
+  }
 
 html {
     background-image: linear-gradient(to bottom right, #001b4a, #000417);
@@ -43,14 +51,6 @@ canvas#star-canvas {
 
 .navbar-tabs:hover {
     cursor: pointer;
-}
-
-/* Main content CSS */
-.main-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Introduction CSS */
