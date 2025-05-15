@@ -3,8 +3,34 @@
 html {
     background-image: linear-gradient(to bottom right, #001b4a, #000417);
     background-attachment: fixed;
-    height: 100%;
-    width: 100vw;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
 }
 
 /* Component-specific CSS classes */
+
+/* NavBar CSS */
+
+.navbar {
+    position: sticky;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    margin-left: 1rem;
+}
+
+.navbar-tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+.navbar-tabs:hover {
+    cursor: pointer;
+}
