@@ -1,0 +1,66 @@
+---
+---
+<canvas id="star-canvas"></canvas>
+
+<script>
+    const canvas = document.getElementById("star-canvas") as HTMLCanvasElement | null;
+    if (!canvas) {
+        console.error("Canvas element not found!");
+    }
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+        console.error("2D context could not be retrieved.");
+    }
+
+    // Number of stars is a function of window area
+    let stars = [];
+    const numStars = (window.innerWidth * window.innerHeight) / 5000;
+    
+    function initCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    
+        stars = Array.from({ length: numStars }, () => ({
+            x: Math.random() * canvas.width,  // Random x position on canvas
+            y: Math.random() * canvas.height,  // Random y position on canvas
+            radius: Math.random() * 1.5 + 0.5,  // Star size between 0.5 and 2
+            dx: (Math.random() - 0.5) * 0.2,  // Movement of star in x direction
+            dy: (Math.random() - 0.5) * 0.2,  // Movement of star in y direction
+        }));
+    }
+  
+    function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        for (const star of stars) {
+            // Draw stars
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+    
+            // Update position
+            star.x += star.dx;
+            star.y += star.dy;
+    
+            // Wrap around edges
+            if (star.x < 0) star.x = canvas.width;
+            if (star.x > canvas.width) star.x = 0;
+            if (star.y < 0) star.y = canvas.height;
+            if (star.y > canvas.height) star.y = 0;
+        }
+    }
+  
+    function animate() {
+      drawStars();
+      requestAnimationFrame(animate);
+    }
+  
+    // Resize support
+    window.addEventListener('resize', initCanvas);
+  
+    // Start
+    initCanvas();
+    animate();
+</script>

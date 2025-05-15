@@ -9,6 +9,16 @@ html {
 
 /* Component-specific CSS classes */
 
+/* Starry Background CSS */
+canvas#star-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
 /* NavBar CSS */
 
 .navbar {
@@ -33,4 +43,12 @@ html {
 
 .navbar-tabs:hover {
     cursor: pointer;
+}
+
+/* Main content CSS */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
