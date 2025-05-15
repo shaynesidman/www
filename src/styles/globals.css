@@ -1,0 +1,10 @@
+/* Site-wide classes */
+
+html {
+    background-image: linear-gradient(to bottom right, #001b4a, #000417);
+    background-attachment: fixed;
+    height: 100%;
+    width: 100vw;
+}
+
+/* Component-specific CSS classes */
