@@ -9,10 +9,15 @@
 }
 
 html {
-    background-image: linear-gradient(to bottom right, #001b4a, #000417);
+    background-image: linear-gradient(to bottom right, #00031c, #121424);
     background-attachment: fixed;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
 /* Component-specific CSS classes */
@@ -102,8 +107,6 @@ canvas#star-canvas {
 
 .checkout {
     font-size: 2rem;
-    color: #ffffff;
-    text-decoration: none;
     text-align: center;
     margin: 4rem;
     padding: 0.5rem 2rem 0.5rem 2rem;
