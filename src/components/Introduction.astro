@@ -2,15 +2,8 @@
 const aboutMe = "I am a young developer passionate about creating full-stack projects with large-scale impacts, especially on pertinent topics in my life. Whether it be soccer (or football, please don't get mad at me), reading non-fiction, or teaching, you can often find me working on some project to hopefully add some value to someone's life."
 const academics = "Having entered my senior year studying computer science at Tufts University, I am fully committed to the pursuit of new ways of thinking and tinkering with new technologies to continue developing my toolbox of skills."
 ---
-<div class="intro">
-    <div class="introduction title">Hi, I'm <span class="tufts">Shayne</span>.</div>
-    <p class="about-me">{aboutMe}</p>
-    <p class="about-me">{academics}</p>
-    <a id="check-out-link" class="checkout" href="/about" onclick="
-        event.preventDefault();
-        const element = document.getElementById('coursework');
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
-    ">
-        Check out some of the work that I have done!
-    </a>
+<div class="flex flex-col justify-center items-center">
+    <div class="mb-[1rem] opacity-0 introduction text-5xl">Hi, I'm <span class="text-[#3172AE]">Shayne</span>.</div>
+    <p class="max-w-[75%] text-xl mb-[1rem] opacity-0 about-me">{aboutMe}</p>
+    <p class="max-w-[75%] text-xl mb-[1rem] opacity-0 about-me">{academics}</p>
 </div>

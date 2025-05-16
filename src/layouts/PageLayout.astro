@@ -13,8 +13,10 @@ import BG from '../components/BG.astro';
 		<title>Shayne Sidman</title>
 	</head>
 	<body>
-		<BG />
-		<NavBar />
-        <slot />
+        <div class="flex flex-col justify-center gap-[2rem] px-6">
+            <BG />
+            <NavBar />
+            <slot />
+        </div>
 	</body>
 </html>
