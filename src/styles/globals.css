@@ -6,7 +6,7 @@
 
 *::-webkit-scrollbar { 
     display: none;
-  }
+}
 
 html {
     background-image: linear-gradient(to bottom right, #001b4a, #000417);
@@ -60,18 +60,47 @@ canvas#star-canvas {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+}
+
+.introduction {
+    margin-bottom: 1rem;
+    animation: slideFromLeft 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+@keyframes slideFromLeft {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
   
-  .title {
+.title {
     font-size: 3rem;
-    text-align: center;
-  }
-  
-  .tufts {
+}
+
+.tufts {
     color: #3172AE;
-  }
-  
-  .checkout {
+}
+
+.about-me {
+    max-width: 75vw;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    animation: slideFromRight 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateX(25%);
+}
+
+@keyframes slideFromRight {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+}
+
+.checkout {
     font-size: 2rem;
     color: #ffffff;
     text-decoration: none;
@@ -81,9 +110,9 @@ canvas#star-canvas {
     border: 2px white solid;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .checkout:hover {
+}
+
+.checkout:hover {
     transform: scale(1.05);
     cursor: pointer;
-  }
+}
