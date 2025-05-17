@@ -1,9 +1,24 @@
 ---
+import Project from "./Project.astro";
+
+// Format is: [[Project name, Project description, Time frame, Done/Ongoing/Deprecated], ...]
+const projects = [
+    ["Hybrid search feature", "As a part of my 2024 summer internship at ACE ABA Software System, I implemented a hybrid search feature in Python that combines the results of a semantic searc, a keyword search, and a cross-encoder model to return semantically and lexically similar results in a database.", "2024", "Done"],
+    ["Retrieval-Augmented Generation (RAG) pipeline", "As another part of my summer 2024 internship, I utilized an RAG pipeline as well as prompt engineering to contextualize an LLM's responses with an external knowledge base.", "2024", "Done"],
+    ["JumboMap", "Beginning as a Hackathon project in spring of 2025, JumboMap has now evolved into a product for Tufts University to make on-campus events more accessible through the use of an interactive map and custom user and admin flows.", "2025", "Ongoing"]
+];
 ---
 
-<div class="">
+<div id="projects" class="flex flex-col gap-4">
     <h1>Projects</h1>
-    <div class="grid grid-cols-1">
-
+    <div class="grid grid-cols-1 gap-6">
+        {projects.map((project, index) => (
+            <Project 
+                title={project[0]} 
+                description={project[1]}
+                time={project[2]}
+                status={project[3]}
+            />
+        ))}          
     </div>
 </div>
