@@ -1,15 +1,22 @@
 ---
-
 ---
 
-<div class="flex flex-col gap-6">
+<div id="contact" class="flex flex-col gap-6">
     <h1>Contact</h1>
-    <div class="flex flex-col justify-center items-center gap-6">
-        <h2>Want to get in contact about a project or some of my other work? Leave your name, email, and a message below and I will get back to you as soon as I can.</h2>
-        <form class="flex flex-col justify-center gap-3">
-            <input type="text" placeholder="Name" class="bg-[#282828] px-4 py-2 w-170">
-            <input type="text" placeholder="Email" class="bg-[#282828] px-4 py-2 w-170">
-            <input type="text" placeholder="Message" class="bg-[#282828] px-4 py-2 h-32 w-170">
+    <div class="flex flex-col justify-center items-center gap-6 text-center">
+        <h2 class="max-w-[700px]">
+            Want to get in contact about a project or some of my other work? Leave your name, email, and a message below and I will get back to you as soon as I can.
+        </h2>
+        <form 
+            action="https://formspree.io/f/xgvkdgpq"
+            method="POST"
+            class="flex flex-col justify-center items-center gap-3 w-full max-w-[700px]"
+        >
+            <input type="text" name="name" placeholder="Name" class="bg-[#282828] px-4 py-2 w-full rounded" />
+            <input type="email" name="email" placeholder="Email" class="bg-[#282828] px-4 py-2 w-full rounded" />
+            <textarea placeholder="Message" name="message" class="bg-[#282828] px-4 py-2 h-32 w-full rounded resize-none"></textarea>
+            <input type="submit" value="Submit" class="bg-[#282828] px-4 py-2 w-fit rounded cursor-pointer self-end" />
         </form>
     </div>
-</div>
+  </div>
+  
