@@ -8,7 +8,7 @@ const academics = "Having entered my senior year studying computer science at Tu
 
 <section id="introduction" class="scroll-mt-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-x-16 w-full mx-auto pb-[1rem]">
-        <div class="opacity-0 introduction flex flex-col gap-6 items-center md:items-start">
+        <div class="opacity-0 slide-from-left flex flex-col gap-6 items-center md:items-start">
             <p class="text-5xl">Hi, I'm <span class="text-[#3172AE]">Shayne</span>.</p>
             <img src="/temp.jpeg" alt="me" class="rounded-full w-[10rem] h-[10rem] object-cover" />
             <div class="flex flex-row items-center gap-1">
@@ -18,8 +18,8 @@ const academics = "Having entered my senior year studying computer science at Tu
         </div>
     
         <div class="flex flex-col">
-            <p class="text-xl mb-[1rem] opacity-0 about-me">{aboutMe}</p>
-            <p class="text-xl opacity-0 about-me">{academics}</p>
+            <p class="text-xl mb-[1rem] opacity-0 slide-from-right text-right">{aboutMe}</p>
+            <p class="text-xl opacity-0 slide-from-right text-right">{academics}</p>
         </div>
     </div>
 </section>
