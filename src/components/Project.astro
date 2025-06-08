@@ -1,10 +1,10 @@
 ---
-const { title, description, time, status, tech } = Astro.props;
+const { title, link, description, time, status, tech } = Astro.props;
 ---
 
 <div class="flex flex-col gap-3 fade-in">
     <div class="flex flex-row justify-between">
-        <h2>{title}</h2>
+        {link === "" ? <h2>{title}</h2> : <a href={link} class="text-2xl">{title}</a>}
         <div class="flex flex-row items-center gap-6">
             <span class=`rounded px-2 py-1 ${status === "Done" ? "bg-[#2dc937]" : "bg-[#cc3232]"}`>{status}</span>
             <p class="flex items-center">{time}</p>
