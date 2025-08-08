@@ -5,14 +5,28 @@ import { getCollection, type CollectionEntry } from "astro:content";
 const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 ---
 <PageLayout>
-    <h1 class="text-4xl mb-4">Blog</h1>
     <ul>
-        {posts.map((post) => (
-          <li>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
-            <small>{post.data.pubDate.toDateString()}</small>
-          </li>
-        ))}
-      </ul>
+        {await Promise.all(
+            posts.map(async (post, index) => {
+                const { Content } = await post.render();
+                return (
+                    <li class="mb-6 pb-4">
+                        <button
+                            class="w-full flex flex-col gap-2"
+                            onclick={`document.getElementById('content-${index}').classList.toggle('hidden')`}
+                        >
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-xl">{post.data.title}</h2>
+                                <h6 class="text-md">{post.data.pubDate.toDateString()}</h6>
+                            </div>
+                            <p class="text-left">{post.data.description}</p>
+                        </button>
+                        <div id={`content-${index}`} class="hidden mt-4">
+                            <Content />
+                        </div>
+                    </li>
+                );
+            })
+        )}
+    </ul>
 </PageLayout>
