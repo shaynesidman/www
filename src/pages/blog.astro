@@ -12,16 +12,20 @@ const posts: CollectionEntry<"blog">[] = await getCollection("blog");
                 return (
                     <li class="mb-6 pb-4">
                         <button
-                            class="w-full flex flex-col gap-2"
-                            onclick={`document.getElementById('content-${index}').classList.toggle('hidden')`}
+                            class="w-full flex flex-col gap-2 hover:cursor-pointer"
+                            onclick={`document.getElementById('content-${index}').classList.toggle('max-h-0');
+                                    document.getElementById('content-${index}').classList.toggle('max-h-[1000px]')`}
                         >
                             <div class="flex justify-between items-center">
                                 <h2 class="text-xl">{post.data.title}</h2>
-                                <h6 class="text-md">{post.data.pubDate.toDateString()}</h6>
+                                <h6 class="text-md">{post.data.pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</h6>
                             </div>
-                            <p class="text-left">{post.data.description}</p>
+                            <p class="text-left text-[#cccccc]">{post.data.description}</p>
                         </button>
-                        <div id={`content-${index}`} class="hidden mt-4">
+                        <div
+                            id={`content-${index}`}
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out mt-4"
+                        >
                             <Content />
                         </div>
                     </li>
