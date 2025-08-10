@@ -17,7 +17,7 @@ const posts: CollectionEntry<"blog">[] = await getCollection("blog");
                                     document.getElementById('content-${index}').classList.toggle('max-h-[1000px]')`}
                         >
                             <div class="flex justify-between items-center">
-                                <h2 class="text-xl">{post.data.title}</h2>
+                                <h2 class="text-xl text-left">{post.data.title}</h2>
                                 <h6 class="text-md">{post.data.pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</h6>
                             </div>
                             <p class="text-left text-[#cccccc]">{post.data.description}</p>
