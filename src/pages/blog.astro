@@ -11,17 +11,17 @@ const posts: CollectionEntry<"blog">[] = await getCollection("blog");
                 const { Content } = await post.render();
                 return (
                     <li class="mb-6 pb-4">
-                        <button
+                        <div
                             class="w-full flex flex-col gap-2 hover:cursor-pointer hover:scale-102 transition-transform duration-300"
                             onclick={`document.getElementById('content-${index}').classList.toggle('max-h-0');
                                     document.getElementById('content-${index}').classList.toggle('max-h-[1000px]')`}
                         >
-                            <div class="flex justify-between items-center">
+                            <div class="flex flex-row justify-between items-center">
                                 <h2 class="text-xl text-left">{post.data.title}</h2>
                                 <h6 class="text-md">{post.data.pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</h6>
                             </div>
                             <p class="text-left text-[#cccccc]">{post.data.description}</p>
-                        </button>
+                        </div>
                         <div
                             id={`content-${index}`}
                             class="max-h-0 overflow-scroll transition-all duration-500 ease-in-out"
