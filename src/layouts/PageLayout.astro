@@ -14,13 +14,15 @@ import Footer from "../components/Footer.astro";
         <title>Shayne Sidman | Full Stack Developer</title>
     </head>
     <body class="min-h-screen">
-        <div class="h-full w-full max-w-4xl px-16 md:px-0 md:px-10 mx-auto flex flex-col justify-center gap-4">
+        <div class="">
             <BG />
-            <NavBar />
-            <main class="flex-1 flex justify-center">
-                <slot />
-            </main>
-            <Footer />
+			<div class="bg-[var(--bg-primary)] h-full w-full max-w-4xl px-16 md:px-0 md:px-10 mx-auto flex flex-col justify-center gap-4">
+				<NavBar />
+				<main class="flex-1 flex justify-center">
+					<slot />
+				</main>
+				<Footer />
+			</div>
         </div>
     </body>
 </html>
