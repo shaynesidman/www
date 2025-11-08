@@ -6,19 +6,21 @@ import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Shayne Sidman | Full Stack Developer</title>
-	</head>
-	<body>
-        <div class="w-full max-w-[900px] px-1 mx-auto flex flex-col justify-center gap-16 md:gap-48 px-10 mb-20">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Shayne Sidman | Full Stack Developer</title>
+    </head>
+    <body class="h-screen md:overflow-hidden">
+        <div class="h-full w-full max-w-4xl px-16 md:px-0 md:px-10 mx-auto flex flex-col gap-16">
             <BG />
             <NavBar />
-            <slot />
+            <main class="flex-1">
+                <slot />
+            </main>
             <Footer />
         </div>
-	</body>
+    </body>
 </html>

@@ -1,5 +1,9 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-    purge: [],
+    content: [
+        './src/pages/**/*.{js,ts,jsx,tsx,mdx,astro}',
+        './src/components/**/*.{js,ts,jsx,tsx,mdx,astro}',
+    ],
     theme: {
         extend: {
             fontFamily: {
@@ -7,10 +11,17 @@ module.exports = {
                 secondary: ['var(--font-secondary)'],
                 mono: ['var(--font-mono)'],
             },
+            colors: {
+                'bg-primary': 'var(--bg-primary)',
+                'bg-secondary': 'var(--bg-secondary)',
+                'bg-tertiary': 'var(--bg-tertiary)',
+                'text-primary': 'var(--text-primary)',
+                'text-secondary': 'var(--text-secondary)',
+                'text-tertiary': 'var(--text-tertiary)',
+                'accent-primary': 'var(--accent-primary)',
+                'accent-hover': 'var(--accent-hover)',
+            },
         },
-    },
-    variants: {
-        extend: {},
     },
     plugins: [],
 };
