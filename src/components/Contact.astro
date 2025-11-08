@@ -2,7 +2,7 @@
 ---
 
 <section id="contact">
-    <div class="w-full flex flex-col justify-center items-center gap-6 text-center border border-[var(--bg-secondary)] rounded-lg p-6 mx-auto">
+    <div class="max-w-xl flex flex-col justify-center items-center gap-6 text-center border border-[var(--bg-secondary)] rounded-lg p-6 mx-auto">
         <h2 class="text-md">
             Want to get in contact? Leave your email and a message below!
         </h2>
@@ -10,10 +10,10 @@
         <form 
             action="https://formspree.io/f/xgvkdgpq"
             method="POST"
-            class="flex flex-col justify-center items-center gap-3 w-full max-w-3xl"
+            class="flex flex-col justify-center items-center gap-3 w-full"
         >
             <input type="email" name="email" placeholder="Email" class="bg-[var(--bg-secondary)] px-4 py-2 w-full rounded" />
-            <textarea placeholder="Message" name="message" class="bg-[var(--bg-secondary)] px-4 py-2 h-32 w-full rounded resize-none"></textarea>
+            <textarea placeholder="Message" name="message" class="bg-[var(--bg-secondary)] px-4 py-2 w-full rounded resize-none"></textarea>
             <input type="submit" value="Submit" class="bg-[var(--bg-secondary)] px-4 py-2 w-fit rounded cursor-pointer self-end" />
         </form>
     </div>
