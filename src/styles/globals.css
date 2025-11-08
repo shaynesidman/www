@@ -43,14 +43,6 @@ html {
 body {
     background-color: var(--bg-primary);
 }
-h1 {
-    font-size: 3rem;
-    color: var(--text-primary);
-}
-h2 {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-}
 /* Component-specific CSS classes */
 .slide-from-left {
     animation: slideFromLeft 0.6s ease-out forwards;
