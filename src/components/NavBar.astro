@@ -4,14 +4,16 @@ import MainIcon from "/public/icons/main-icon.svg";
 
 <nav>
     <div class="sticky flex flex-row justify-between items-center w-full py-8">
-        <a href="/" class="text-xl font-mono text-accent-primary hover:cursor-pointer">
+        <a href="/" class="text-xl font-mono text-[var(--accent-primary)] hover:cursor-pointer">
             ~/ss
         </a>
-        <div class="flex flex-row gap-[1rem] hover:cursor-pointers">
-            <a href="/#projects" class="transform transition-transform duration-200 hover:scale-105">Projects</a>
+        <div class="flex flex-row gap-1 hover:cursor-pointers">
+            <a href="/projects" class="transform transition-transform duration-200 hover:bg-[var(--bg-secondary)] px-2 py-2 rounded-lg">Projects</a>
             <!-- <a href="/blog">Blog</a> -->
-            <a href="/#contact" class="transform transition-transform duration-200 hover:scale-105">Contact</a>
-            <a href="/blog" class="transform transition-transform duration-200 hover:scale-105">Blog</a>
+            <a href="/contact" class="transform transition-transform duration-200 hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-primary)] px-2 py-2 rounded-lg">Contact</a>
+            <a href="/blog" class="transform transition-transform duration-200 hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-primary)] px-2 py-2 rounded-lg">Blog</a>
+            <a href="/books" class="transform transition-transform duration-200 hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-primary)] px-2 py-2 rounded-lg">Books</a>
+            <a href="/about" class="transform transition-transform duration-200 hover:bg-[var(--bg-secondary)] hover:text-[var(--accent-primary)] px-2 py-2 rounded-lg">About</a>
         </div>
     </div>
 </nav>
