@@ -17,19 +17,16 @@ const projects = [
 ---
 
 <section id="projects">
-    <div class="flex flex-col gap-4">
-        <h1>Projects</h1>
-        <div class="grid grid-cols-1 gap-6">
-            {projects.map(project => (
-                <Project 
-                    title={project[0]}
-                    link={project[1]}
-                    description={project[2]}
-                    time={project[3]}
-                    status={project[4]}
-                    tech={project[5]}
-                />
-            ))}          
-        </div>
+    <div class="h-full w-full flex flex-col gap-6">
+        {projects.map(project => (
+            <Project 
+                title={project[0]}
+                link={project[1]}
+                description={project[2]}
+                time={project[3]}
+                status={project[4]}
+                tech={project[5]}
+            />
+        ))}          
     </div>
 </section>

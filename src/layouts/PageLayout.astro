@@ -13,11 +13,11 @@ import Footer from "../components/Footer.astro";
         <meta name="generator" content={Astro.generator} />
         <title>Shayne Sidman | Full Stack Developer</title>
     </head>
-    <body class="h-screen md:overflow-hidden">
+    <body class="h-screen">
         <div class="h-full w-full max-w-4xl px-16 md:px-0 md:px-10 mx-auto flex flex-col justify-center gap-4">
             <BG />
             <NavBar />
-            <main class="flex-1 flex justify-center">
+            <main class="flex-1 flex justify-center overflow-scroll">
                 <slot />
             </main>
             <Footer />
