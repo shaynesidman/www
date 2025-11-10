@@ -14,7 +14,7 @@ const { title, link, description, time, status, tech } = Astro.props;
     <p class="text-[var(--text-secondary)]">{description}</p>
     <div class="flex flex-row gap-2 flex-wrap">
         {tech.map((piece: string[]) => (
-            <span class="rounded px-2 py-1 bg-[var(--bg-secondary)]">{piece}</span>
+            <span class="rounded-lg px-2 py-1 bg-[var(--bg-secondary)] text-[var(--text-secondary)]">{piece}</span>
         ))}
     </div>
 </div>
