@@ -10,17 +10,17 @@ const posts: CollectionEntry<"blog">[] = await getCollection("blog");
             posts.map(async (post, index) => {
                 const { Content } = await post.render();
                 return (
-                    <li class="mb-6 pb-4">
+                    <li class="mb-6 pb-4 flex flex-col gap-4 text-[var(--text-secondary)]">
                         <div
                             class="w-full flex flex-col gap-2 hover:cursor-pointer hover:scale-102 transition-transform duration-300"
                             onclick={`document.getElementById('content-${index}').classList.toggle('max-h-0');
                                     document.getElementById('content-${index}').classList.toggle('max-h-[1000px]')`}
                         >
                             <div class="flex flex-row justify-between items-center">
-                                <h2 class="text-xl text-left">{post.data.title}</h2>
-                                <h6 class="text-md">{post.data.pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</h6>
+                                <h2 class="text-2xl font-semibold text-left text-[var(--accent-primary)]">{post.data.title}</h2>
+                                <h6 class="text-md text-[var(--text-primary)]">{post.data.pubDate.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</h6>
                             </div>
-                            <p class="text-left text-[#cccccc]">{post.data.description}</p>
+                            <p class="text-left text-[var(--text-primary)]">{post.data.description}</p>
                         </div>
                         <div
                             id={`content-${index}`}
