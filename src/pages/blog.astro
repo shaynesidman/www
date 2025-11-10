@@ -10,7 +10,7 @@ const posts: CollectionEntry<"blog">[] = await getCollection("blog");
             posts.map(async (post, index) => {
                 const { Content } = await post.render();
                 return (
-                    <li class="mb-6 pb-4 flex flex-col gap-4 text-[var(--text-secondary)]">
+                    <li class="mb-6 pb-4 flex flex-col gap-4 text-[var(--text-secondary)] border border-[var(--bg-secondary)] rounded-lg p-6 mx-auto">
                         <div
                             class="w-full flex flex-col gap-2 hover:cursor-pointer hover:scale-102 transition-transform duration-300"
                             onclick={`document.getElementById('content-${index}').classList.toggle('max-h-0');
