@@ -10,9 +10,9 @@ const posts: CollectionEntry<"blog">[] = await getCollection("blog");
             posts.map(async (post, index) => {
                 const { Content } = await post.render();
                 return (
-                    <li class="mb-6 pb-4 flex flex-col gap-4 text-[var(--text-secondary)] border border-[var(--bg-secondary)] rounded-lg p-6 mx-auto">
+                    <li class="mb-6 pb-4 flex flex-col gap-4 text-[var(--text-secondary)] border border-[var(--bg-secondary)] rounded-lg p-6 mx-auto hover:cursor-pointer hover:bg-[var(--bg-secondary)] transition duration-300">
                         <div
-                            class="w-full flex flex-col gap-2 hover:cursor-pointer hover:scale-102 transition-transform duration-300"
+                            class="w-full flex flex-col gap-2"
                             onclick={`document.getElementById('content-${index}').classList.toggle('max-h-0');
                                     document.getElementById('content-${index}').classList.toggle('max-h-[1000px]')`}
                         >
