@@ -1,12 +1,13 @@
 ---
-const { title, link, description, time, status, tech } = Astro.props;
+const { title, deploymentLink, repoLink, description, time, status, tech } = Astro.props;
 ---
 
 <div class="bg-[var(--bg-primary)] flex flex-col border border-[var(--bg-secondary)] rounded-lg p-4 gap-2">
     <div class="flex flex-row justify-between">
         <h2 class="text-2xl">{title}</h2>
         <div class="flex flex-row items-center gap-6">
-            {link === "" ? <></> : <a href={link} class="rounded-lg px-2 py-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-300 bg-[var(--bg-secondary)]">Source</a>}
+            {deploymentLink === "" ? <></> : <a href={deploymentLink} class="rounded-lg px-2 py-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-300 bg-[var(--bg-secondary)]">Deployment</a>}
+            {repoLink === "" ? <></> : <a href={repoLink} class="rounded-lg px-2 py-1 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-300 bg-[var(--bg-secondary)]">Source</a>}
             <span class=`rounded-lg px-2 py-1 ${status === "Done" ? "bg-[#2dc937]" : "bg-[#cc3232]"}`>{status}</span>
             <p class="flex items-center">{time}</p>
         </div>
