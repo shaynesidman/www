@@ -65,3 +65,8 @@ body {
     animation: fade-in linear;
     animation-timeline: view(80vh 0px);
 }
+
+/* Bold blog subheadings */
+h2 {
+    font-weight: 700;
+}
