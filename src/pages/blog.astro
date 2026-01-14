@@ -7,7 +7,7 @@ const posts: CollectionEntry<"blog">[] = await getCollection("blog");
 <PageLayout>
     <ul>
         {await Promise.all(
-            posts.map(async (post, index) => {
+            posts.reverse().map(async (post, index) => {
                 const { Content } = await post.render();
                 return (
                     <li class="mb-6 pb-4 flex flex-col gap-4 text-[var(--text-secondary)] border border-[var(--bg-secondary)] rounded-lg p-6 mx-auto hover:cursor-pointer hover:bg-[var(--bg-secondary)] transition duration-300">
