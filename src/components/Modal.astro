@@ -1,5 +1,5 @@
 ---
-const { id, title } = Astro.props;
+const { id, title, deploymentLink, repoLink, status, tech, contributions, impact } = Astro.props;
 ---
 
 <dialog
@@ -8,13 +8,36 @@ const { id, title } = Astro.props;
 >
     <div class="flex flex-col gap-4">
         <div class="flex flex-row justify-between items-center">
-            <h2 class="text-2xl font-semibold">{title}</h2>
-            <button
-                data-close-dialog={id}
-                class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-200 text-2xl leading-none outline-none"
-                aria-label="Close"
-            >&times;</button>
+            <h2 class="text-2xl font-semibold font-mono">{title}</h2>
+            <div class="flex flex-row gap-2 ">
+                <span class={`rounded-lg px-2 py-1 text-sm ${status === "Done" ? "bg-[#2dc937]" : status === "Deprecated" ? "bg-[#888]" : "bg-[#cc3232]"}`}>{status}</span>
+                {deploymentLink !== "" && <a href={deploymentLink} class="rounded-lg px-2 py-1 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-300 bg-[var(--bg-secondary)] outline-none">Deployment</a>}
+                {repoLink !== "" && <a href={repoLink} class="rounded-lg px-2 py-1 text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-300 bg-[var(--bg-secondary)] outline-none">Source</a>}
+                <button
+                    data-close-dialog={id}
+                    class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-200 text-2xl leading-none outline-none pl-2"
+                    aria-label="Close"
+                >&times;</button>
+            </div>
         </div>
+
+        <div class="space-y-2">
+            <h3 class="font-mono font-semibold">Contributions</h3>
+            <p>{contributions}</p>
+        </div>
+        <div class="space-y-2">
+            <h3 class="font-mono font-semibold">Impact</h3>
+            <p>{impact}</p>
+        </div>
+        <div class="space-y-2">
+            <h3 class="font-mono font-semibold">Stack</h3>
+            <div class="flex flex-row gap-2 flex-wrap">
+                {tech.map((piece: string) => (
+                    <span class="rounded-lg px-2 py-1 bg-[var(--bg-secondary)] text-[var(--text-secondary)] text-sm">{piece}</span>
+                ))}
+            </div>
+        </div>
+
         <slot />
     </div>
 </dialog>
