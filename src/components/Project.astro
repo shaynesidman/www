@@ -1,6 +1,6 @@
 ---
 import Modal from "./Modal.astro";
-const { title, deploymentLink, repoLink, description, time, status, tech, contributions, impact } = Astro.props;
+const { title, deploymentLink, repoLink, description, time, status, tech, modalDescription, contributions, impact } = Astro.props;
 const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
 ---
 
@@ -25,7 +25,7 @@ const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a
     </div>
 </div>
 
-<Modal id={dialogId} title={title} deploymentLink={deploymentLink} repoLink={repoLink} status={status} tech={tech}, contributions={contributions}, impact={impact}>
+<Modal id={dialogId} title={title} deploymentLink={deploymentLink} repoLink={repoLink} status={status} tech={tech} modalDescription={modalDescription} contributions={contributions} impact={impact}>
     <slot name="modal" />
 </Modal>
 

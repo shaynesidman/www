@@ -1,5 +1,5 @@
 ---
-const { id, title, deploymentLink, repoLink, status, tech, contributions, impact } = Astro.props;
+const { id, title, deploymentLink, repoLink, status, tech, modalDescription = [], contributions = [], impact = [] } = Astro.props;
 ---
 
 <dialog
@@ -20,15 +20,34 @@ const { id, title, deploymentLink, repoLink, status, tech, contributions, impact
                 >&times;</button>
             </div>
         </div>
-
-        <div class="space-y-2">
-            <h3 class="font-mono font-semibold">Contributions</h3>
-            <p>{contributions}</p>
-        </div>
-        <div class="space-y-2">
-            <h3 class="font-mono font-semibold">Impact</h3>
-            <p>{impact}</p>
-        </div>
+        {modalDescription.length > 0 && (
+            <div class="space-y-2">
+                <h3 class="font-mono font-semibold">Description</h3>
+                {modalDescription.map((line: string) => (
+                    <p>{line}</p>
+                ))}
+            </div>
+        )}
+        {contributions.length > 0 && (
+            <div class="space-y-2">
+                <h3 class="font-mono font-semibold">Contributions</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    {contributions.map((contribution: string) => (
+                        <li>{contribution}</li>
+                    ))}
+                </ul>
+            </div>
+        )}
+        {impact.length > 0 && (
+            <div class="space-y-2">
+                <h3 class="font-mono font-semibold">Impact</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    {impact.map((imp: string) => (
+                        <li>{imp}</li>
+                    ))}
+                </ul>
+            </div>
+        )}
         <div class="space-y-2">
             <h3 class="font-mono font-semibold">Stack</h3>
             <div class="flex flex-row gap-2 flex-wrap">

@@ -1,10 +1,14 @@
 ---
 import Project from "./Project.astro";
 
-// Format is: [[Project name, Link to deployment, Link to repo, Project description, Beginning time, Done/Ongoing/Deprecated, [Languages, Tools, and Technologies]], Contributions, Impact ...]
+// Format is: [Project name, Link to deployment, Link to repo, Card description, Beginning time, Done/Ongoing/Deprecated, [Tech], [Modal description], [Impact], [Contributions]]
 const projects = [
-    ["PingPoint", "https://pingpoint-three.vercel.app/dashboard", "https://github.com/zack-white/pingpoint", "A network activity-visualization tool used to demystify events occuring on a network, defend against attacks, and expose vulnerabilities. Won 1st place in Security @ JumboHack 2026.", "2026", "Done", ["React", "Next.js", "FastAPI", "Node.js", "Anthropic API", "Raspberry Pi 5", "Server-Sent Events"]],
-    ["commit-mog", "", "https://github.com/shaynesidman/commit-mog", "See who commit mogs you on GitHub. This is the true faceoff for CS majors.", "2026", "Ongoing", ["React", "Vite", "Flask", "GitHub API"]],
+    ["PingPoint", "https://pingpoint-three.vercel.app/dashboard", "https://github.com/zack-white/pingpoint", "A network activity-visualization tool used to demystify events occuring on a network, defend against attacks, and expose vulnerabilities. Won 1st place in Security @ JumboHack 2026.", "2026", "Done", ["React", "Next.js", "FastAPI", "Node.js", "Anthropic API", "Raspberry Pi 5", "Server-Sent Events", "Scapy", "Nmap"],
+        ["Have you ever wondered what's going on inside your network? Have you looked at Wireshark and decided cybersecurity isn't for you (same)? If so, PingPoint (thank you chat for the name) is for you.", "My team and I built a networking-scanning-and-visualization tool that monitors inbound and outbound packets on your network and analyzes them to uncover threats and vulnerabilties. These insights are then relayed in non-technical language to users through Anthropic's Haiku 4.5 model.", "To do this, we set up a local network on which attacks were simulated and a Raspberry Pi 5 to host our FastAPI backend for Scapy and Nmap commands. Our frontend was written in React and Next.js. We used server-sent events to send packet information from our backend every 5 seconds, and message queues to visualize the corresponding packets."], 
+        ["1st place in Security at JumboHack 2026"],
+        ["Configured Raspberry Pi 5 to host FastAPI backend", "Wrote Python functions to capture and send packets to frontend via Scapy in real-time via SSE", "Consolidated packet data to develop descriptive and succinct prompts for LLM", "Implement frontend node graph, packet chart, and metrics designs"]],
+    ["commit-mog", "", "https://github.com/shaynesidman/commit-mog", "See who commit mogs you on GitHub. This is the true faceoff for CS majors.", "2026", "Ongoing", ["React", "Vite", "Flask", "GitHub API"],
+        ["To be honest, idk how to describe this project without going too deep down the brainrot rabbit hole. Use it to reach Marlon-level on the PSL scale (in terms of contributions)."], ["I hope this can bring awareness to how wild social media has become", "You can flex on your friends and force them to make more commits to GitHub"]],
     ["MHD", "https://masshistday.vercel.app", "https://github.com/JumboCode/mhd", "A data visualization-focused web application for the Massachusetts Historical Society to expand their program. Led as a Tech Lead with Dan Glorioso as Project Manager.", "2026", "Ongoing", ["React", "Next.js", "PostgreSQL", "Node.js", "Drizzle", "Neon", "D3.js", "mapbox"]],
     ["JumboMap", "https://tufts-jumbomap.vercel.app", "https://github.com/zack-white/jumbohack2025", "Beginning as a Hackathon project in spring of 2025, JumboMap has now evolved into a product for Tufts University to make on-campus events more accessible through the use of an interactive map and custom user and admin flows.", "2026", "Ongoing", ["React", "Next.js", "PostgreSQL", "Node.js", "Neon",]],
     ["RunTracer", "https://run-tracer.shaynesidman.com", "https://github.com/shaynesidman/run-tracer", "A project that allows users to trace their run routes, create run routes of specified distances, and view their friends' activities.", "2026", "Done", ["React", "Next.js", "PostgreSQL", "Node.js", "Drizzle", "Neon", "mapbox"]],
@@ -32,6 +36,9 @@ const projects = [
                 time={project[4]}
                 status={project[5]}
                 tech={project[6]}
+                modalDescription={project[7]}
+                impact={project[8]}
+                contributions={project[9]}
             />
         ))}          
     </div>
