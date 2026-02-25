@@ -86,7 +86,7 @@ const { id, title, deploymentLink, repoLink, status, tech, modalDescription = []
     document.querySelectorAll('[data-close-dialog]').forEach(btn => {
         btn.addEventListener('click', () => {
             const id = (btn as HTMLElement).getAttribute('data-close-dialog');
-            if (id) document.getElementById(id)?.close();
+            if (id) (document.getElementById(id) as HTMLDialogElement)?.close();
         });
     });
 </script>
