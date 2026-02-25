@@ -1,0 +1,9 @@
+---
+import raw from '../../../public/icons/github.svg?raw';
+const { size = 14 } = Astro.props;
+const svg = raw
+    .replace('fill="#ffffff"', 'fill="currentColor"')
+    .replace('width="30px"', `width="${size}"`)
+    .replace('height="30px"', `height="${size}"`);
+---
+<span class="inline-flex" set:html={svg} />
