@@ -34,7 +34,7 @@ const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a
             <h2 class="text-2xl font-semibold">{title}</h2>
             <button
                 onclick={`document.getElementById('${dialogId}').close()`}
-                class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-200 text-2xl leading-none"
+                class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition duration-200 text-2xl leading-none outline-none"
                 aria-label="Close"
             >&times;</button>
         </div>
