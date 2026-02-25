@@ -24,7 +24,7 @@ const projects = [
 <section id="projects">
     <div class="h-full w-full flex flex-col gap-6">
         {projects.map(project => (
-            <Project 
+            <Project
                 title={project[0]}
                 deploymentLink={project[1]}
                 repoLink={project[2]}
@@ -32,6 +32,7 @@ const projects = [
                 time={project[4]}
                 status={project[5]}
                 tech={project[6]}
+                dialogContent={project[7]}
             />
         ))}          
     </div>
