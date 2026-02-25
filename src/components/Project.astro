@@ -7,7 +7,7 @@ const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a
 ---
 
 <div
-    class="bg-[var(--bg-primary)] flex flex-col border border-[var(--bg-secondary)] rounded-lg p-4 gap-2 cursor-pointer hover:border-[var(--text-secondary)] transition duration-300"
+    class="bg-[var(--bg-primary)] flex flex-col border border-[var(--bg-secondary)] rounded-lg p-4 gap-3 cursor-pointer hover:border-[var(--text-secondary)] transition duration-300"
     onclick={`document.body.style.overflow='hidden'; document.getElementById('${dialogId}').showModal()`}
 >
     <div class="flex flex-row justify-between">
