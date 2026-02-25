@@ -11,8 +11,8 @@ const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a
     onclick={`document.body.style.overflow='hidden'; document.getElementById('${dialogId}').showModal()`}
 >
     <div class="flex flex-row justify-between">
-        <h2 class="text-2xl">{title}</h2>
-        <div class="flex flex-row items-center gap-6">
+        <h2 class="text-2xl font-mono">{title}</h2>
+        <div class="flex flex-row items-center gap-4">
             {deploymentLink === "" ? <></> : <a href={deploymentLink} data-stop-propagation class="rounded-lg px-2 py-1 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] transition duration-300 border flex items-center gap-2">Live<ExternalIcon size={14} /></a>}
             {repoLink === "" ? <></> : <a href={repoLink} data-stop-propagation class="rounded-lg px-2 py-1 text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] transition duration-300 border flex items-center gap-2">Source<GithubIcon size={14} /></a>}
             <span class=`rounded-lg px-2 py-1 ${status === "Done" ? "bg-[#2dc937]" : "bg-[#cc3232]"}`>{status}</span>
@@ -22,7 +22,7 @@ const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a
     <p class="text-[var(--text-secondary)]">{description}</p>
     <div class="flex flex-row gap-2 flex-wrap">
         {tech.map((piece: string[]) => (
-            <span class="rounded-lg px-2 py-1 bg-[var(--bg-secondary)] text-[var(--text-secondary)]">{piece}</span>
+            <span class="rounded-lg px-2 py-1 bg-[var(--bg-secondary)] text-[var(--text-secondary)] text-sm font-mono">{piece}</span>
         ))}
     </div>
 </div>
