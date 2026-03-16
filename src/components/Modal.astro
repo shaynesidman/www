@@ -76,7 +76,13 @@ const { id, title, deploymentLink, repoLink, status, tech, modalDescription = []
 <script>
     document.querySelectorAll('dialog').forEach(dialog => {
         dialog.addEventListener('click', e => {
-            if (e.target === dialog) dialog.close();
+            const rect = dialog.getBoundingClientRect();
+            const clickedInside =
+                e.clientX >= rect.left &&
+                e.clientX <= rect.right &&
+                e.clientY >= rect.top &&
+                e.clientY <= rect.bottom;
+            if (!clickedInside) dialog.close();
         });
         dialog.addEventListener('close', () => {
             document.body.style.overflow = '';
@@ -84,7 +90,8 @@ const { id, title, deploymentLink, repoLink, status, tech, modalDescription = []
     });
 
     document.querySelectorAll('[data-close-dialog]').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
             const id = (btn as HTMLElement).getAttribute('data-close-dialog');
             if (id) (document.getElementById(id) as HTMLDialogElement)?.close();
         });
