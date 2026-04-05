@@ -48,8 +48,13 @@
             "As the tech lead, it was my responsibility to manage the full development lifecycle. This included translating client requirements into tickets for biweekly sprints, conducting code reviews, maintaining the CI/CD pipeline, and architecting the database schema.",
             "I also led weekly technical workshops and office hours to support my devs' understanding of the technologies we are using."
         ],
-        "impact": [],
-        "contributions": []
+        "impact": ["Taught a bunch of cool people React, TypeScript, and many other framework-and-library-related concepts."],
+        "contributions": [
+            "Architected the project structure and PostgreSQL database schema based on client requirements.",
+            "Created and maintained the CI/CD pipeline.",
+            "Conducted code reviews on developer PRs.",
+            "Wrote tickets for biweekly sprints."
+        ]
     },
     {
         "title": "JumboMap",
