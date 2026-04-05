@@ -4,11 +4,12 @@ import GithubIcon from "./icons/GithubIcon.astro";
 import ExternalIcon from "./icons/ExternalIcon.astro";
 const { title, deploymentLink, repoLink, description, time, status, tech, modalDescription, contributions, impact } = Astro.props;
 const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')}`;
+const hasModal = modalDescription?.length > 0 || impact?.length > 0 || contributions?.length > 0;
 ---
 
 <div
-    class="bg-[var(--bg-primary)] flex flex-col border border-[var(--bg-secondary)] rounded-lg p-4 gap-3 cursor-pointer hover:border-[var(--text-secondary)] transition duration-300"
-    onclick={`document.body.style.overflow='hidden'; document.getElementById('${dialogId}').showModal()`}
+    class={`bg-[var(--bg-primary)] flex flex-col border border-[var(--bg-secondary)] rounded-lg p-4 gap-3 transition duration-300 ${hasModal ? 'cursor-pointer hover:border-[var(--text-secondary)]' : ''}`}
+    onclick={hasModal ? `document.body.style.overflow='hidden'; document.getElementById('${dialogId}').showModal()` : undefined}
 >
     <div class="flex flex-row justify-between">
         <h2 class="text-2xl font-mono">{title}</h2>
@@ -27,9 +28,11 @@ const dialogId = `dialog-${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a
     </div>
 </div>
 
-<Modal id={dialogId} title={title} deploymentLink={deploymentLink} repoLink={repoLink} status={status} tech={tech} modalDescription={modalDescription} contributions={contributions} impact={impact}>
-    <slot name="modal" />
-</Modal>
+{hasModal && (
+    <Modal id={dialogId} title={title} deploymentLink={deploymentLink} repoLink={repoLink} status={status} tech={tech} modalDescription={modalDescription} contributions={contributions} impact={impact}>
+        <slot name="modal" />
+    </Modal>
+)}
 
 <script>
     document.querySelectorAll('[data-stop-propagation]').forEach(el => {
