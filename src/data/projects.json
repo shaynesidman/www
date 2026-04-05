@@ -1,0 +1,168 @@
+[
+    {
+        "title": "PingPoint",
+        "deploymentLink": "https://pingpoint-three.vercel.app/dashboard",
+        "repoLink": "https://github.com/zack-white/pingpoint",
+        "description": "A network activity-visualization tool used to demystify events occuring on a network, defend against attacks, and expose vulnerabilities. Won 1st place in Security @ JumboHack 2026.",
+        "time": "2026",
+        "status": "Done",
+        "tech": ["React", "Next.js", "FastAPI", "Node.js", "Anthropic API", "Raspberry Pi 5", "Server-Sent Events", "Scapy", "Nmap"],
+        "modalDescription": [
+            "Have you ever wondered what's going on inside your network? Have you looked at Wireshark and decided cybersecurity isn't for you (same)? If so, PingPoint (thank you chat for the name) is for you.",
+            "My team and I built a networking-scanning-and-visualization tool that monitors inbound and outbound packets on your network and analyzes them to uncover threats and vulnerabilties. These insights are then relayed in non-technical language to users through Anthropic's Haiku 4.5 model.",
+            "To do this, we set up a local network on which attacks were simulated and a Raspberry Pi 5 to host our FastAPI backend for Scapy and Nmap commands. Our frontend was written in React and Next.js. We used server-sent events to send packet information from our backend every 5 seconds, and message queues to visualize the corresponding packets."
+        ],
+        "impact": ["1st place in Security at JumboHack 2026"],
+        "contributions": [
+            "Configured Raspberry Pi 5 to host FastAPI backend",
+            "Wrote Python functions to capture and send packets to frontend via Scapy in real-time via SSE",
+            "Consolidated packet data to develop descriptive and succinct prompts for LLM",
+            "Implement frontend node graph, packet chart, and metrics designs"
+        ]
+    },
+    {
+        "title": "commit-mog",
+        "deploymentLink": "https://commit-mog.shaynesidman.com",
+        "repoLink": "https://github.com/shaynesidman/commit-mog",
+        "description": "See who commit mogs you on GitHub. This is the true faceoff for CS majors.",
+        "time": "2026",
+        "status": "Ongoing",
+        "tech": ["React", "Vite", "Flask", "GitHub API", "AWS Lambda", "Amazon API Gateway", "AWS SAM"],
+        "modalDescription": ["I brainrotted myself for several hours to do the \"market\" research for this project. Do not recommend."],
+        "impact": [
+            "I hope this can bring awareness to how wild social media has become",
+            "You can flex on your friends and force them to make more commits to GitHub"
+        ],
+        "contributions": []
+    },
+    {
+        "title": "MHD",
+        "deploymentLink": "https://masshistday.vercel.app",
+        "repoLink": "https://github.com/JumboCode/mhd",
+        "description": "A data visualization-focused web application for the Massachusetts Historical Society to expand their program. Led as a Tech Lead.",
+        "time": "2026",
+        "status": "Ongoing",
+        "tech": ["React", "Next.js", "PostgreSQL", "Node.js", "Drizzle", "Neon", "D3.js", "MapLibre"],
+        "modalDescription": [
+            "For my senior capstone project, I chose to lead a team of 10 developers to build a data analytics platform for the MHS, enabling the visualization of student projects to support legislative presentations and school outreach for program expansion.",
+            "As the tech lead, it was my responsibility to manage the full development lifecycle. This included translating client requirements into tickets for biweekly sprints, conducting code reviews, maintaining the CI/CD pipeline, and architecting the database schema.",
+            "I also led weekly technical workshops and office hours to support my devs' understanding of the technologies we are using."
+        ],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "JumboMap",
+        "deploymentLink": "https://tufts-jumbomap.vercel.app",
+        "repoLink": "https://github.com/zack-white/jumbohack2025",
+        "description": "Beginning as a Hackathon project in spring of 2025, JumboMap has now evolved into a product for Tufts University to make on-campus events more accessible through the use of an interactive map and custom user and admin flows.",
+        "time": "2026",
+        "status": "Ongoing",
+        "tech": ["React", "Next.js", "PostgreSQL", "Node.js", "Neon"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "RunTracer",
+        "deploymentLink": "https://run-tracer.shaynesidman.com",
+        "repoLink": "https://github.com/shaynesidman/run-tracer",
+        "description": "A project that allows users to trace their run routes, create run routes of specified distances, and view their friends' activities.",
+        "time": "2026",
+        "status": "Done",
+        "tech": ["React", "Next.js", "PostgreSQL", "Node.js", "Drizzle", "Neon", "mapbox"],
+        "modalDescription": [
+            "In summer 2025, I decided it would be a good idea to update my Apple Watch. This decision ended up completely bricking it, rendering it useless. Now, I had no watch and no way to track my runs.",
+            "Then, I remembered I like swe and can make an app to do this for me. So, I started working on it over the summer and continued throughout the fall semester and into winter break. The app now supports tracking and generating routes for any form of activity, viewing your activity history, adding friends and seeing their activity, and more."
+        ],
+        "impact": [
+            "This app saved me over the summer",
+            "My friend Bobby also used RunTracer while prepping for a half marathon"
+        ],
+        "contributions": []
+    },
+    {
+        "title": "Rock Band Implementation",
+        "deploymentLink": "",
+        "repoLink": "",
+        "description": "An implementation of Rock Band created in SystemVerilog on an FPGA, with input sent from a Rock Band guitar to the FPGA wirelessly. The game was displayed on a screen and state was updated from the FPGA through a VGA cable.",
+        "time": "2025",
+        "status": "Done",
+        "tech": ["SystemVerilog", "FPGA"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "File Copy",
+        "deploymentLink": "",
+        "repoLink": "",
+        "description": "A UDP-based distributed file transfer system that reliably copies directories between client and server machines despite network and disk failures, emphasizing the end-to-end principle and idempotency.",
+        "time": "2025",
+        "status": "Done",
+        "tech": ["C++", "UDP"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "Market Updates",
+        "deploymentLink": "",
+        "repoLink": "",
+        "description": "A project developed for my 2025 summer internship at Shepherd Financial Partners that fetches the most recent market news, current events, and more to create a digestible weekly summary so that the firm can better serve and inform their clients.",
+        "time": "2025",
+        "status": "Done",
+        "tech": ["React", "Next.js", "PostgreSQL", "Neon", "Node.js", "Clerk", "Perplexity AI API"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "Hybrid search feature",
+        "deploymentLink": "",
+        "repoLink": "",
+        "description": "As a part of my 2024 summer internship at ACE ABA Software System, I implemented a hybrid search feature in Python that combines the results of a semantic search, a keyword search, and a cross-encoder model to return semantically and lexically similar results in a database of lessons.",
+        "time": "2024",
+        "status": "Done",
+        "tech": ["Python", "PostgreSQL", "DBeaver", "Jira"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "Retrieval-Augmented Generation (RAG) pipeline",
+        "deploymentLink": "",
+        "repoLink": "",
+        "description": "As another part of my summer 2024 internship, I created an RAG pipeline and combined it with prompt engineering to contextualize an LLM's responses with an external knowledge base.",
+        "time": "2024",
+        "status": "Done",
+        "tech": ["Python", "PostgreSQL", "DBeaver", "Jira"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "Somerville Museum",
+        "deploymentLink": "",
+        "repoLink": "https://github.com/JumboCode/somerville-museum",
+        "description": "Worked in a team to create a web application for the Somerville Museum to keep track of their inventory of clothing for historical re-enactments.",
+        "time": "2024",
+        "status": "Done",
+        "tech": ["React", "Next.js", "PostgreSQL", "Node.js", "Neon", "Clerk"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    },
+    {
+        "title": "Emerald Necklace Conservancy",
+        "deploymentLink": "",
+        "repoLink": "https://github.com/JumboCode/emerald-necklace-conservancy",
+        "description": "Worked in a team to create a web application for the Emerald Necklace Conservancy around Boston to display information about the landmarks and parks that make it up.",
+        "time": "2023",
+        "status": "Done",
+        "tech": ["React", "Next.js", "MongoDB", "Node.js"],
+        "modalDescription": [],
+        "impact": [],
+        "contributions": []
+    }
+]

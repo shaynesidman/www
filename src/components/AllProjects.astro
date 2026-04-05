@@ -1,59 +1,22 @@
 ---
 import Project from "./Project.astro";
-
-// Format is: [Project name, Link to deployment, Link to repo, Card description, Beginning time, Done/Ongoing/Deprecated, [Tech], [Modal description], [Impact], [Contributions]]
-const projects = [
-    ["PingPoint", "https://pingpoint-three.vercel.app/dashboard", "https://github.com/zack-white/pingpoint", "A network activity-visualization tool used to demystify events occuring on a network, defend against attacks, and expose vulnerabilities. Won 1st place in Security @ JumboHack 2026.", "2026", "Done", ["React", "Next.js", "FastAPI", "Node.js", "Anthropic API", "Raspberry Pi 5", "Server-Sent Events", "Scapy", "Nmap"],
-        ["Have you ever wondered what's going on inside your network? Have you looked at Wireshark and decided cybersecurity isn't for you (same)? If so, PingPoint (thank you chat for the name) is for you.", "My team and I built a networking-scanning-and-visualization tool that monitors inbound and outbound packets on your network and analyzes them to uncover threats and vulnerabilties. These insights are then relayed in non-technical language to users through Anthropic's Haiku 4.5 model.", "To do this, we set up a local network on which attacks were simulated and a Raspberry Pi 5 to host our FastAPI backend for Scapy and Nmap commands. Our frontend was written in React and Next.js. We used server-sent events to send packet information from our backend every 5 seconds, and message queues to visualize the corresponding packets."], 
-        ["1st place in Security at JumboHack 2026"],
-        ["Configured Raspberry Pi 5 to host FastAPI backend", "Wrote Python functions to capture and send packets to frontend via Scapy in real-time via SSE", "Consolidated packet data to develop descriptive and succinct prompts for LLM", "Implement frontend node graph, packet chart, and metrics designs"]],
-    ["commit-mog", "", "https://github.com/shaynesidman/commit-mog", "See who commit mogs you on GitHub. This is the true faceoff for CS majors.", "2026", "Ongoing", ["React", "Vite", "Flask", "GitHub API", "AWS Lambda", "Amazon API Gateway"],
-        ["I brainrotted myself for several hours to do the market research for this project. Do not recommend."], 
-        ["I hope this can bring awareness to how wild social media has become", "You can flex on your friends and force them to make more commits to GitHub"],
-        []],
-    ["MHD", "https://masshistday.vercel.app", "https://github.com/JumboCode/mhd", "A data visualization-focused web application for the Massachusetts Historical Society to expand their program. Led as a Tech Lead.", "2026", "Ongoing", ["React", "Next.js", "PostgreSQL", "Node.js", "Drizzle", "Neon", "D3.js", "mapbox"],
-        [
-        "For my senior capstone project, I chose to lead a team of 10 developers to build a data analytics platform for the MHS, enabling the visualization of student projects to support legislative presentations and school outreach for program expansion.",
-        "As the tech lead, it was my responsibility to manage the full development lifecycle. This included translating client requirements into tickets for biweekly sprints, conducting code reviews, maintaining the CI/CD pipeline, and architecting the database schema.",
-        "I also led weekly technical workshops and office hours to support my devs' understanding of the technologies we are using."
-        ],        
-        [],
-        []],
-    ["JumboMap", "https://tufts-jumbomap.vercel.app", "https://github.com/zack-white/jumbohack2025", "Beginning as a Hackathon project in spring of 2025, JumboMap has now evolved into a product for Tufts University to make on-campus events more accessible through the use of an interactive map and custom user and admin flows.", "2026", "Ongoing", ["React", "Next.js", "PostgreSQL", "Node.js", "Neon",],
-        [],
-        [],
-        []],
-    ["RunTracer", "https://run-tracer.shaynesidman.com", "https://github.com/shaynesidman/run-tracer", "A project that allows users to trace their run routes, create run routes of specified distances, and view their friends' activities.", "2026", "Done", ["React", "Next.js", "PostgreSQL", "Node.js", "Drizzle", "Neon", "mapbox"],
-        ["In summer 2025, I decided it would be a good idea to update my Apple Watch. This decision ended up completely bricking it, rendering it useless. Now, I had no watch and no way to track my runs.", "Then, I remembered I like swe and can make an app to do this for me. So, I started working on it over the summer and continued throughout the fall semester and into winter break. The app now supports tracking and generating routes for any form of activity, viewing your activity history, adding friends and seeing their activity, and more."],
-        ["This app saved me over the summer", "My friend Bobby also used RunTracer while prepping for a half marathon"],
-        []],
-    ["Rock Band Implementation", "", "", "An implementation of Rock Band created in SystemVerilog on an FPGA, with input sent from a Rock Band guitar to the FPGA wirelessly. The game was displayed on a screen and state was updated from the FPGA through a VGA cable.", "2025", "Done", ["SystemVerilog", "FPGA"]],
-    ["File Copy", "", "", "A UDP-based distributed file transfer system that reliably copies directories between client and server machines despite network and disk failures, emphasizing the end-to-end principle and idempotency.", "2025", "Done", ["C++", "UDP"]],
-    //["${financeManager}", "", "", "A web application to manage personal finances and monitor expenses, income, subscriptions, budgeting, and more.", "2025", "Ongoing", ["React", "Next.js", "PostgreSQL", "Node.js", "Neon",]],
-    //["Alarm Clock", "", "https://github.com/shaynesidman/alarm-clock", "A customized alarm clock running on a Raspberry Pi featuring integrations with my personal calendar, the weather, Oura Ring data, and more.", "2025", "Ongoing", ["Flask", "Python", "JavaScript", "Jinja2", "Raspberry Pi"]],
-    ["Market Updates", "", "", "A project developed for my 2025 summer internship at Shepherd Financial Partners that fetches the most recent market news, current events, and more to create a digestible weekly summary so that the firm can better serve and inform their clients.", "2025", "Done", ["React", "Next.js", "PostgreSQL", "Neon", "Node.js", "Clerk", "Perplexity AI API"]],
-    //["JumboBoxd", "", "https://github.com/shaynesidman/JumboBoxd", "An onboarding project for technology leads of JumboCode teams at Tufts for the 2025-26 year.", "2025", "Done", ["React", "Next.js", "Node.js", "Neon", "Clerk"]],
-    ["Hybrid search feature", "", "", "As a part of my 2024 summer internship at ACE ABA Software System, I implemented a hybrid search feature in Python that combines the results of a semantic search, a keyword search, and a cross-encoder model to return semantically and lexically similar results in a database of lessons.", "2024", "Done", ["Python", "PostgreSQL", "DBeaver", "Jira",]],
-    ["Retrieval-Augmented Generation (RAG) pipeline", "", "", "As another part of my summer 2024 internship, I created an RAG pipeline and combined it with prompt engineering to contextualize an LLM's responses with an external knowledge base.", "2024", "Done", ["Python", "PostgreSQL", "DBeaver", "Jira",]],
-    ["Somerville Museum", "", "https://github.com/JumboCode/somerville-museum", "Worked in a team to create a web application for the Somerville Museum to keep track of their inventory of clothing for historical re-enactments. ", "2024", "Done",  ["React", "Next.js", "PostgreSQL", "Node.js", "Neon", "Clerk"]],
-    ["Emerald Necklace Conservancy", "","https://github.com/JumboCode/emerald-necklace-conservancy", "Worked in a team to create a web application for the Emerald Necklace Conservancy around Boston to display information about the landmarks and parks that make it up.", "2023", "Done",  ["React", "Next.js", "MongoDB", "Node.js"]],
-];
+import projects from "../data/projects.json";
 ---
 
 <section id="projects">
     <div class="h-full w-full flex flex-col gap-6">
         {projects.map(project => (
             <Project
-                title={project[0]}
-                deploymentLink={project[1]}
-                repoLink={project[2]}
-                description={project[3]}
-                time={project[4]}
-                status={project[5]}
-                tech={project[6]}
-                modalDescription={project[7]}
-                impact={project[8]}
-                contributions={project[9]}
+                title={project.title}
+                deploymentLink={project.deploymentLink}
+                repoLink={project.repoLink}
+                description={project.description}
+                time={project.time}
+                status={project.status}
+                tech={project.tech}
+                modalDescription={project.modalDescription}
+                impact={project.impact}
+                contributions={project.contributions}
             />
         ))}          
     </div>
